@@ -37,7 +37,14 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     public ResponseEntity<ErrorDetails> handleAllException(Exception exception, WebRequest webRequest) {
         ErrorDetails errorDetails = new ErrorDetails(new Date(), exception.getLocalizedMessage(),
                                         webRequest.getDescription(false));
-        return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>(errorDetails,HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+    
+    @ExceptionHandler(BlogServiceException.class)
+    public ResponseEntity<ErrorDetails> handleBlogException(BlogServiceException exception, WebRequest webRequest) {
+        ErrorDetails errorDetails = new ErrorDetails(new Date(), exception.getLocalizedMessage(),
+                                        webRequest.getDescription(false));
+        return new ResponseEntity<>(errorDetails,HttpStatus.UNPROCESSABLE_ENTITY);
     }
 
     // handle specific exceptions
