@@ -9,8 +9,13 @@ This is Backend for social media blog built in springboot, JWT Token and email s
 - Email verification
 - View Posts by Category with pagination
 - Create Post
+- Fetch Post
 - Update Post
 - Delete Post
+- Create Category
+- Fetch Category
+- Update Category
+- Delete Category
 
 ## Tools and Technologies
 
