@@ -1,6 +1,6 @@
 # blog-service
 
-This is Backend for social media blog built in springboot, JWT Token and email service
+This is Backend for social media blog built in springboot, JWT Token and email service. Front end in Angular is coming in the future.
 
 ## Tools and Technologies
 
@@ -10,6 +10,7 @@ This is Backend for social media blog built in springboot, JWT Token and email s
 - Spring Security and JWT token
 - Spring Swagger Fox UI 
 - Spring Data JPA
+- Spring Mail
 - Apache Maven
 - PostgreSQL Database
 
