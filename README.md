@@ -7,12 +7,11 @@ This is Backend for social media blog built in springboot, JWT Token and email s
 - Java 11
 - Spring Boot
 - Spring Web MVC
-- Spring Cloud - Open Feign
-- Spring Cloud - Netflix Eureka Server
-- Spring Cloud Config Server
-- Fault Tolerant with resilence4J (circuit breaker pattern)
-- Spring Cloud API Gateway
+- Spring Security and JWT token
+- Spring Swagger Fox UI 
+- Spring Data JPA
 - Apache Maven
+- PostgreSQL Database
 
 Please find the API endpoints with swagger - 
 
