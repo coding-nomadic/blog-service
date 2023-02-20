@@ -22,6 +22,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @SuppressWarnings("deprecation")
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    private static final String[] AUTH_WHITELIST = { "/authenticate", "/swagger-resources/**", "/swagger-ui/**",
+            "/v3/api-docs", "/webjars/**" };
     @Autowired
     private UserDetailServiceImpl userDetailsService;
 
@@ -38,7 +40,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return NoOpPasswordEncoder.getInstance();
     }
 
-    
     @Bean(name = BeanIds.AUTHENTICATION_MANAGER)
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
@@ -47,9 +48,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable().authorizeRequests().antMatchers("/authenticate").permitAll().anyRequest().authenticated()
-                                        .and().exceptionHandling().and().sessionManagement()
-                                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        http.csrf().disable().authorizeRequests().antMatchers("/authenticate").authenticated()
+                                        .antMatchers(AUTH_WHITELIST).permitAll().and().exceptionHandling().and()
+                                        .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
     }
 }
