@@ -32,7 +32,11 @@ This is Backend for social media blog built in springboot, JWT Token and email s
 - PostgreSQL Database
 - Docker
 
-## Please find the API endpoints with swagger - 
+## Please find the API endpoints with this swagger URL - 
+
+```
+http://localhost:8888/swagger-ui/index.html#/
+```
 
 ![image](https://user-images.githubusercontent.com/8009104/220157755-7207805c-8122-46a1-b9f8-c17b8fdf4998.png)
 
