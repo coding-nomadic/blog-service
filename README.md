@@ -16,6 +16,7 @@ This is Backend for social media blog built in springboot, JWT Token and email s
 - Fetch Category
 - Update Category
 - Delete Category
+- Audit each operations in DB
 
 ## Tools and Technologies
 
@@ -25,6 +26,7 @@ This is Backend for social media blog built in springboot, JWT Token and email s
 - Spring Security and JWT token
 - Spring Swagger Fox UI 
 - Spring Data JPA
+- Spring AOP
 - Spring Mail
 - Apache Maven
 - PostgreSQL Database
