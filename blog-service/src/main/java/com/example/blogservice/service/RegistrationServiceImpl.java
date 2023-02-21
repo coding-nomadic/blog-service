@@ -10,6 +10,7 @@ import com.example.blogservice.repository.UserRepository;
 import com.example.blogservice.utils.EmailUtils;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,6 +35,9 @@ public class RegistrationServiceImpl implements RegistrationService {
     @Autowired
     EmailService emailService;
 
+    @Value("${api.url}")
+    String apiUrl;
+
     @Override
     public void registerUser(RegistrationRequest registrationRequest) {
         if (userRepository.existsByUserName(registrationRequest.getUserName())) {
@@ -49,7 +53,7 @@ public class RegistrationServiceImpl implements RegistrationService {
         roles.add(userRole);
         user.setRoles(roles);
         userRepository.save(user);
-        String link = "http://localhost:8888/api/v1/signup/confirm?token=" + tokenForNewUser;
+        String link = apiUrl + "/api/v1/signup/confirm?token=" + tokenForNewUser;
         emailService.sendMail(registrationRequest.getEmail(),
                                         EmailUtils.buildEmail(registrationRequest.getFullName(), link));
 
