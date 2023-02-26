@@ -31,6 +31,7 @@ This is Backend for social media blog built in springboot, JWT Token and email s
 - Apache Maven
 - PostgreSQL Database
 - Docker
+- Junit and Integration Testing with testcontainers
 
 ## Please find the API endpoints with this swagger URL - 
 
