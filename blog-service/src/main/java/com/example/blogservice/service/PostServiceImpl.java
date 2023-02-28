@@ -21,6 +21,7 @@ import java.util.stream.Collectors;
 
 @Service
 @Transactional
+//
 public class PostServiceImpl implements PostService {
     @Autowired
     PostRepository postRepository;
