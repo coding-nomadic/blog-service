@@ -29,6 +29,7 @@ This is Backend for social media blog built in springboot, JWT Token and email s
 - Spring AOP
 - Spring Mail
 - Apache Maven
+- Redis for caching
 - PostgreSQL Database
 - Docker
 - Junit and Integration Testing with testcontainers
